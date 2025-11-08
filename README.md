@@ -49,9 +49,9 @@ pytest -vv admin.py
 DB details:
 ```
 Host: sql5.freesqldatabase.com:3306
-Database user: sql5495299
-Database name: sql5495299
-Database password: hz7bDRYNPh
+Database user: ******
+Database name: ******
+Database password: ******
 Web console: https://www.phpmyadmin.co/
 ```
 
