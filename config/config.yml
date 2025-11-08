@@ -1,0 +1,4 @@
+init:
+  database: mysql+pymysql://sql5495299:hz7bDRYNPh@sql5.freesqldatabase.com:3306/sql5495299
+file:
+  masterkey: tQ1_xQ3XCWneuROdiBJ13D8_QpMmI2-xSnyO7zLEDFM=

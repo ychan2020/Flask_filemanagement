@@ -1,0 +1,49 @@
+<!-- templates/Remove.html -->
+
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<h1 class="title">List of Files</h1>
+
+<p class="subtitle">This is a list of all the file available for you.</p>
+
+<table class="table is-fullwidth">
+	<tr>
+		<th>File ID</th>
+		<th>File Name</th>
+		<th>Upload date (UTC)</th>
+		<th>Owner</th>
+	</tr>
+
+	<!-- for-loop to get the file list -->
+	{% for document in documents %}
+	<tr>
+		<td>{{ document.fileid }}</td>
+		<td>{{ document.filename }}</td>
+		<td>{{ document.timestamp }}</td>
+		<td>{{ document.owner }}</td>
+	</tr>
+	{% endfor %}
+</table>
+
+<h1 class="title">Remove</h1>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <div class="notification is-danger">
+                {{ messages[0] }}.
+            </div>
+        {% endif %}
+        {% endwith %}
+<form id="RemoveForm" method="POST" action="/remove">
+	<input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+	<div class="field">
+		<div class="control">
+			<input class="input is-large" type="number" min="1" name="remove_id" placeholder="File ID" autofocus="" required pattern="[0-9]">
+		</div>
+	</div>
+    <button class="button is-block is-info is-large is-fullwidth">Remove</button>
+</form>
+
+{% endblock %}

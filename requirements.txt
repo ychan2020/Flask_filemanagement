@@ -1,0 +1,17 @@
+# pip install -r requirements.txt
+
+# Webapp
+flask
+flask_sqlalchemy
+flask_login
+werkzeug
+cryptography
+pyaml-env
+pytz
+PyQRCode~=1.2.1
+onetimepass~=1.0.1
+
+# Testing
+flake8
+pylint
+pytest

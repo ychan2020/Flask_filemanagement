@@ -1,0 +1,2 @@
+init:
+  database: mysql+pymysql://sql5495299:hz7bDRYNPh@sql5.freesqldatabase.com:3306/sql5495299

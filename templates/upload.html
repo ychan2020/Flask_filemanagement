@@ -1,0 +1,33 @@
+<!-- templates/upload.html -->
+
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="title">Upload</h1>
+    <div class="box">
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <div class="notification is-danger">
+                {{ messages[0] }}.
+            </div>
+        {% endif %}
+        {% endwith %}
+      <form id="UploadForm" method="POST" action="/upload" enctype="multipart/form-data">
+          <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+          <div class="field">
+          <p><input class="input is-large" type="file" name="file" required></p>
+          <div class="control">
+             <input class="input is-large" type="text" name="role" list="10" placeholder="Role" required pattern="ISS|Ground Staff|Government|Admin"
+						title="Must contain an available role">
+             <datalist id="10">
+                 <option>ISS</option>
+				 <option>Ground Staff</option>
+				 <option>Government</option>
+				 <option>Admin</option>
+              </datalist>
+            </div>
+            <button class="button is-block is-info is-large is-fullwidth">Upload</button>
+        </div>
+      </form>
+    </div>
+{% endblock %}

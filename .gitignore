@@ -1,0 +1,6 @@
+# Certificates
+*.key
+*.crt
+
+# Configuation
+*.yaml
